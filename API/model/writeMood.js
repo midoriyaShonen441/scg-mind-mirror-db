@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const Model = mongoose.model();
 
 const userMood = new Schema(
     {
@@ -17,4 +16,4 @@ const userMood = new Schema(
     }
 );
 
-module.exports = Model("moodCollection", userMood);
+module.exports = mongoose.model("moodCollection", userMood);
