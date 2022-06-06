@@ -8,7 +8,26 @@ app.use(express.json());
 
 app.post(`/db/write`, async (req, res) => {
 
-    const { uid, name, email, phone, address, voiceMood, faceMood } = req.body;
+    const {            
+        uid, 
+        name, 
+        email,
+        phone, 
+        address,
+        
+        // voice data //
+        voiceWord,
+        voiceScore,
+        voiceMagnitude,
+        voiceMood,
+        
+        // video data //
+        faceAnger,
+        faceJoy,
+        faceSurprise,
+        faceSorrow,
+        faceMood,
+    } = req.body;
     const writeMood = require("./model/writeMood");
     
     try {
@@ -19,6 +38,19 @@ app.post(`/db/write`, async (req, res) => {
             phone:phone, 
             address:address, 
             voiceMood:voiceMood, 
+            faceMood:faceMood,
+
+            // voice data //
+            voiceWord:voiceWord,
+            voiceScore:voiceScore,
+            voiceMagnitude:voiceMagnitude,
+            voiceMood:voiceMood,
+            
+            // video data //
+            faceAnger:faceAnger,
+            faceJoy:faceJoy,
+            faceSurprise:faceSurprise,
+            faceSorrow:faceSorrow,
             faceMood:faceMood
         });
         res.send("OK");
