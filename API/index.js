@@ -14,7 +14,7 @@ app.post(`/db/write`, async (req, res) => {
         email,
         phone, 
         address,
-        
+
         // voice data //
         voiceWord,
         voiceScore,
@@ -37,8 +37,6 @@ app.post(`/db/write`, async (req, res) => {
             email:email, 
             phone:phone, 
             address:address, 
-            voiceMood:voiceMood, 
-            faceMood:faceMood,
 
             // voice data //
             voiceWord:voiceWord,
